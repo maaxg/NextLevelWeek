@@ -1,0 +1,181 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+    /*Top e bottom são 0*/
+    /*Alinhamento de caixa pelo lado de fora da caixa(margin)*/
+    margin: 0 auto;
+}
+#page-create-point header{
+    margin-top: 48px;
+    display: flex;
+    /*Quando se faz o justify content com o display flex você pode dar um espaço entre os itens da mesma caixa*/
+    justify-content: space-between;
+    align-items: center;
+}
+#page-create-point header a{
+   color: var(--title-color);
+   font-weight: bold;
+    /*O display flex faz com que a imagem arrow left se alinhe*/
+   display: flex;
+   align-items: center;
+}
+
+#page-create-point header a span{
+    /*Uma margem à direita de 16px*/
+    margin-right: 16px;
+    /*A imagem de flecha para voltar*/
+    background-image: url('../assets/arrow-left.svg');
+    /*Essa imagem só funciona com esses parametros*/
+    display: flex;
+    width: 20px;
+    height: 24px;
+}
+form {
+    background-color: white;
+    /*Preenchimento externo e Alinhamento*/
+    margin: 80px auto;
+    /*Preenchimento INTERNO da caixa*/
+    padding: 64px;
+
+    border-radius: 8px;
+
+    max-width: 730px;
+    /*O tamanho/preenchimento da caixa vai acompanhar a borda da caixa*/    
+}
+
+form h1{
+    font-size: 36px;
+}
+form fieldset {
+    margin-top: 64px;
+
+    border: 0;
+}
+form legend{
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%
+}
+form legend h2{
+    font-size: 24px;
+}
+form legend span{
+    font-size: 14px;
+    color: var(--title-color);
+    
+}
+form .field{
+    /*Preenchimento de todo espaço "flex" que a caixa de cada elemento tem*/
+    flex: 1;
+    /*Os elementos padroes estão em flex, mas na mesma linha*/
+    display: flex;
+    /*Alinahmento dos elementos*/
+    flex-direction: column;
+
+    margin-bottom: 24px;
+    
+}
+form .field-group{
+    display: flex;
+}
+form input, 
+form select{
+    background-color: #f0f0f5;
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    /*
+    Tira a linha preta
+    outline: none;*/
+}
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+form .field-group .field + .field{
+    margin-left: 24px;
+}
+
+form button {
+    width: 260px;
+    height: 55px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+
+    margin-top: 40px;
+
+    transition-duration: 400ms;
+}
+form button:hover{
+    background-color: #2fb86e;
+}
+.items-grid{
+    /*O display é mais multidimensional o flex é unidimensional */
+    display: grid;
+    /*Por meio de frações*/
+    grid-template-columns: 1fr 1fr 1fr;
+   /* grid-template-columns: 200px 200px 200px;*/
+   /*Pro grid temos uma propriedade especial similar ao margin*/
+   gap: 16px
+}
+.items-grid li{
+    background-color: #f5f5f5;
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;
+
+    padding: 32px 24px 16px;
+    /*O fluxo padrão do flex é da Direita pra esquerda*/
+    display: flex;
+    /*O flex direction faz a inversão do fluxo padrão e ele passa a ser de cima para baixo*/
+    flex-direction: column;
+    align-items: center;
+    /*O espaçamento de cima pra baixo por conta do flex-direction*/
+    justify-content: space-between;
+
+    text-align: center;
+    /*O cursor pointer faz ele parecer clicavel*/
+    cursor: pointer;
+}
+.items-grid li span{
+    margin-top: 12px;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+}
+/*Com o .selected colado no li, você diz: "Procure um elemento li com a classe selected*/
+/*Com o .selected separado do li, você diz: "Procure uma classe selected DENTRO do elemento li*/
+.items-grid li.selected{
+    background: #e1faec;
+    border: 2px solid #34cb79
+
+}
+/*Vai ficar responsavel foi tirar os eventos de pointer desses 2 elementos*/
+.items-grid li img, 
+.items-grid li span{
+    pointer-events: none;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Serve para configurar os metadados-->
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Ecoleta</title>
+    {% endblock title %}
+    
+    <!--Configuração do site para caber em telas de diversos tamanhos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="/styles/main.css" rel="stylesheet">
+    <!-- Blocks são blocos do nunjucks para a repetição do código!
+        ele pega um trecho de código parecido em algum arquivo
+     -->
+   {% block styles %}
+   {% endblock styles %}
+
+    
+    <link href="/styles/responsive.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="{{ pageId }}">
+        {% block content %}
+        {% endblock content %}
+          {#<div class="content">
+            <header>
+                <img src="/assets/logo.svg" alt="logo_ecoleta">
+                <a href="/create-point">
+                    <span></span>
+                    Cadastre um ponto de coleta</a>
+            </header>
+            <!--O main vai ser a tag que diferencia as informações princiais do documento-->
+            <main>
+                <h1>Seu marketplace de coleta de resíduos</h1>
+               <!-- Utilizando o nunjucks como template engine, vamos passar uma variavel para o html -->
+                <!-- <h1>{{ title }}</h1>-->
+            
+                <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
+            
+                <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong> </a>
+            </main>
+             </div>
+    
+            </div>
+             #}
+            
+            
+       
+    </div>
+    {% block modal %}
+    {% endblock modal %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+/*Um conjunto de regras para configuração que foi determinada para um expressão*/
+@media(max-width: 900px){
+    #page-home{
+        background-position-x: 70vw;
+    }
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+    #page-home header a{
+        position: absolute;
+        bottom: 10px;
+
+        left: 150px;
+        transform: translateX(-20%);
+    }
+    #page-home main{
+        align-items: center;
+    }
+    #page-search-results .card{
+        grid-template-columns: 1fr;
+    }
+    #page-create-point .field-group{
+        flex-direction: column;
+
+    }
+    #page-create-point .field-group .field + .field{
+        margin-left: 0;
+    }
+    
+}
+@media(min-width: 1700px){
+    #page-home{
+        background-position-x: 40vw;
+    }
+}
+@media(max-height: 600px){
+    #page-home{
+        background-position-y: 200px;
+        
+    }
+    #page-search-results .cards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media(max-width: 400px){
+    #page-home header a{
+        position: absolute;
+        bottom: -35px;
+
+        left: 130px;
+        transform: translateX(-20%);
+    }
+}
