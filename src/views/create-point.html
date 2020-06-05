@@ -115,8 +115,10 @@
     </form>
 {% endblock content %}
 {% block modal %}
-   {% if saved %}
+   {% if saved == true%}
         {%include "partials/point-created.html"%}
+    {%elseif saved == false%}  
+         {%include "partials/point-not-created.html"%}
     {%endif %}
 {% endblock modal %}
 {#<header> <img src="/assets/logo.svg" alt="logo_ecoleta"> <a href="/"> <span></span> Voltar para home</a> </header>-->
